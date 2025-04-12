@@ -35,5 +35,8 @@ mongoose.connect(process.env.MONGO_URI, {
     console.error(' mongoDB connection error:', err.message);
     process.exit(1);
   });
+  app.get('/', (req, res) => {
+    res.send('API is running in Vrcel...');
+  });
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
